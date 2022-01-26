@@ -1,0 +1,12 @@
+﻿<Project>
+  <ItemGroup>
+    <CompilerVisibleProperty Include="NG_ViewModelKeysNamespace" />
+    <CompilerVisibleProperty Include="NG_DialogKeysNamespace" />
+
+    <CompilerVisibleProperty Include="NG_DevelopmentMode" />
+    <CompilerVisibleProperty Include="NG_DebugCommandGenerator" />
+    <CompilerVisibleProperty Include="NG_DebugDialogKeyGenerator" />
+    <CompilerVisibleProperty Include="NG_DebugPropertyGenerator" />
+    <CompilerVisibleProperty Include="NG_DebugViewModelKeyGenerator" />
+  </ItemGroup>
+</Project>
