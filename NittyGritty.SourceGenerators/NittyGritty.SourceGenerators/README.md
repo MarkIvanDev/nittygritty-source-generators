@@ -1,5 +1,5 @@
 ﻿# Nitty Gritty Source Generators
-This package includes the following source generators:
+This package contains the following source generators:
 
 ### Property Generator
 Generate *observable* properties by annotating your fields inside a class with `[Notify]`. The class should have `ObservableObject` as its base class. You can also annotate your field with `[AlsoNotify]` to also raise the property changed event for other properties whenever the generated property is set.

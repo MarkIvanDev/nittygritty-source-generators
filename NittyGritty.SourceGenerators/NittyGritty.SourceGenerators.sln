@@ -5,15 +5,18 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NittyGritty.SourceGenerators.Annotations", "NittyGritty.SourceGenerators.Annotations\NittyGritty.SourceGenerators.Annotations.csproj", "{5E3E35D1-FEA2-4242-8273-7AB7AF23F8DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NittyGritty.SourceGenerators.Helpers", "NittyGritty.SourceGenerators.Helpers\NittyGritty.SourceGenerators.Helpers.csproj", "{5B960EAD-A2E0-496A-8357-150827F9B342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NittyGritty.SourceGenerators.Helpers", "NittyGritty.SourceGenerators.Helpers\NittyGritty.SourceGenerators.Helpers.csproj", "{5B960EAD-A2E0-496A-8357-150827F9B342}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A8AA3923-998A-4737-B285-E422093BC19C}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		NittyGritty.SourceGenerators\NittyGritty.SourceGenerators.props = NittyGritty.SourceGenerators\NittyGritty.SourceGenerators.props
+		NittyGritty.Uno.SourceGenerators\NittyGritty.Uno.SourceGenerators.props = NittyGritty.Uno.SourceGenerators\NittyGritty.Uno.SourceGenerators.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NittyGritty.SourceGenerators", "NittyGritty.SourceGenerators\NittyGritty.SourceGenerators.csproj", "{14642718-9D5D-47AD-94FA-6693FDE9F60B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NittyGritty.SourceGenerators", "NittyGritty.SourceGenerators\NittyGritty.SourceGenerators.csproj", "{14642718-9D5D-47AD-94FA-6693FDE9F60B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NittyGritty.Uno.SourceGenerators", "NittyGritty.Uno.SourceGenerators\NittyGritty.Uno.SourceGenerators.csproj", "{5422C947-D08D-45A7-8741-52BE5FBE4F6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +36,10 @@ Global
 		{14642718-9D5D-47AD-94FA-6693FDE9F60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14642718-9D5D-47AD-94FA-6693FDE9F60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14642718-9D5D-47AD-94FA-6693FDE9F60B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5422C947-D08D-45A7-8741-52BE5FBE4F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5422C947-D08D-45A7-8741-52BE5FBE4F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5422C947-D08D-45A7-8741-52BE5FBE4F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5422C947-D08D-45A7-8741-52BE5FBE4F6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

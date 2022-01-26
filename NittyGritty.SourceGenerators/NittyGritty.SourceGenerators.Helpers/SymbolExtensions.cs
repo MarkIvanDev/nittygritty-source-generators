@@ -24,6 +24,12 @@ namespace NittyGritty.SourceGenerators.Helpers
             return value.IsNull ? default(T) : (T)value.Value;
         }
 
+        public static string GetTypeValue(this AttributeData attribute, string key)
+        {
+            var value = attribute.NamedArguments.FirstOrDefault(a => a.Key == key).Value;
+            return !value.IsNull && value.Kind == TypedConstantKind.Type ? value.Value.ToString() : null;
+        }
+
         public static bool IsDerivedFromType(this INamedTypeSymbol symbol, string type)
         {
             if (symbol.ToDisplayString() == type)
@@ -37,6 +43,11 @@ namespace NittyGritty.SourceGenerators.Helpers
             }
 
             return symbol.BaseType.IsDerivedFromType(type);
+        }
+
+        public static bool ImplementsInterface(this INamedTypeSymbol symbol, string type)
+        {
+            return symbol.AllInterfaces.Any(i => i.ToDisplayString() == type);
         }
 
     }
