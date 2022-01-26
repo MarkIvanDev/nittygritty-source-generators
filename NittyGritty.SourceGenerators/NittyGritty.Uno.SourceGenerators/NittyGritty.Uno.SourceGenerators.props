@@ -1,0 +1,8 @@
+﻿<Project>
+  <ItemGroup>
+    <CompilerVisibleProperty Include="NG_DevelopmentMode" />
+    <CompilerVisibleProperty Include="NG_DebugLocatorGenerator" />
+    <CompilerVisibleProperty Include="NG_DebugPageGenerator" />
+    <CompilerVisibleProperty Include="NG_DebugDialogGenerator" />
+  </ItemGroup>
+</Project>
