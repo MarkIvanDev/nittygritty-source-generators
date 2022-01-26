@@ -1,0 +1,2 @@
+﻿# NittyGritty Source Generator Annotations
+
