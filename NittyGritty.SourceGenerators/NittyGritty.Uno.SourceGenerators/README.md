@@ -1,4 +1,6 @@
 ﻿# Nitty Gritty Uno Source Generators
+Please read the documentation for [Nitty Gritty Source Generator Annotations](https://www.nuget.org/packages/NittyGritty.SourceGenerators.Annotations/) first before proceeding.
+
 This package contains the following source generators:
 
 ### Locator Generator
