@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
+using NittyGritty.SourceGenerators.Annotations;
 using NittyGritty.SourceGenerators.Helpers;
 using NittyGritty.Uno.SourceGenerators.Receivers;
 
@@ -31,7 +32,7 @@ namespace NittyGritty.Uno.SourceGenerators
                 return;
             }
 
-            foreach (var item in receiver.Dialogs)
+            foreach (var item in receiver.Dialogs.Distinct(SymbolEqualityComparer.Default).Cast<INamedTypeSymbol>())
             {
                 if (!item.IsDerivedFromType("Windows.UI.Xaml.Controls.ContentDialog"))
                 {
@@ -54,6 +55,15 @@ namespace NittyGritty.Uno.SourceGenerators
                         if (receiver.DialogKeys.TryGetValue(key, out var viewModel))
                         {
                             codeWriter.AppendLine($"public {viewModel.ToDisplayString()} ViewModel => DataContext as {viewModel.ToDisplayString()};");
+                        }
+                        else
+                        {
+                            var dialogAttribute = item.GetAttribute<DialogAttribute>();
+                            var vm = dialogAttribute.GetTypeValue("ViewModel");
+                            if (vm != null)
+                            {
+                                codeWriter.AppendLine($"public {vm} ViewModel => DataContext as {vm};");
+                            }
                         }
                     }
                 }

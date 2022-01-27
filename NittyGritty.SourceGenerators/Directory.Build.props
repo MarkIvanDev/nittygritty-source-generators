@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <PackageVersion>1.1.0</PackageVersion>
+    <PackageVersion>1.2.0</PackageVersion>
     <Authors>markivan.basto</Authors>
     <Copyright>(c) 2022 Mark Ivan Basto</Copyright>
     <PackageProjectUrl>https://github.com/MarkIvanDev/nittygritty-source-generators</PackageProjectUrl>

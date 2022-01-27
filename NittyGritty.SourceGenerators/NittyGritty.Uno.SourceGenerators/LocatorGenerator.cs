@@ -75,7 +75,7 @@ namespace NittyGritty.Uno.SourceGenerators
                             using (codeWriter.BeginScope($"services.Add{lifetime}<INavigationService>(isp =>"))
                             {
                                 codeWriter.AppendLine("var navigationService = new NavigationService();");
-                                foreach (var item in receiver.Pages)
+                                foreach (var item in receiver.Pages.Distinct(SymbolEqualityComparer.Default).Cast<INamedTypeSymbol>())
                                 {
                                     if (!item.IsDerivedFromType("Windows.UI.Xaml.Controls.Page"))
                                     {
@@ -102,7 +102,7 @@ namespace NittyGritty.Uno.SourceGenerators
                             using (codeWriter.BeginScope("services.AddSingleton<IDialogService>(isp =>"))
                             {
                                 codeWriter.AppendLine("var dialogService = new DialogService();");
-                                foreach (var item in receiver.Dialogs)
+                                foreach (var item in receiver.Dialogs.Distinct(SymbolEqualityComparer.Default).Cast<INamedTypeSymbol>())
                                 {
                                     if (!item.IsDerivedFromType("Windows.UI.Xaml.Controls.ContentDialog"))
                                     {

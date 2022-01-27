@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using NittyGritty.SourceGenerators.Annotations;
 using NittyGritty.SourceGenerators.Helpers;
 using NittyGritty.Uno.SourceGenerators.Receivers;
 
@@ -31,7 +33,7 @@ namespace NittyGritty.Uno.SourceGenerators
                 return;
             }
 
-            foreach (var item in receiver.Pages)
+            foreach (var item in receiver.Pages.Distinct(SymbolEqualityComparer.Default).Cast<INamedTypeSymbol>())
             {
                 if (!item.IsDerivedFromType("Windows.UI.Xaml.Controls.Page"))
                 {
@@ -54,6 +56,15 @@ namespace NittyGritty.Uno.SourceGenerators
                         if (receiver.ViewModelKeys.TryGetValue(key, out var viewModel))
                         {
                             codeWriter.AppendLine($"public {viewModel.ToDisplayString()} ViewModel => DataContext as {viewModel.ToDisplayString()};");
+                        }
+                        else
+                        {
+                            var pageAttribute = item.GetAttribute<PageAttribute>();
+                            var vm = pageAttribute.GetTypeValue("ViewModel");
+                            if (vm != null)
+                            {
+                                codeWriter.AppendLine($"public {vm} ViewModel => DataContext as {vm};");
+                            }
                         }
                     }
                 }

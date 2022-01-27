@@ -8,5 +8,7 @@ namespace NittyGritty.SourceGenerators.Annotations
     public class DialogAttribute : Attribute
     {
         public string Key { get; set; }
+
+        public Type ViewModel { get; set; }
     }
 }
